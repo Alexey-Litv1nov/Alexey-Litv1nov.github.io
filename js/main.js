@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
 // hamburger menun
     let hamburgerBtn = document.querySelector(".header__hamburger-btn");
+    let hamburgerLinks = document.querySelectorAll(".hamburger-link");
     let hamburderContent = document.querySelector(".hamburger-content");
     function hamburger() {
         hamburgerBtn.addEventListener("click",()=> {
@@ -18,6 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
     hamburger();
+    hamburgerLinks.forEach((link)=> {
+        link.addEventListener("click",(event)=> {
+            hamburgerBtn.classList.toggle("btn-active");
+            hamburderContent.classList.toggle("hamburger-active");
+        });
+    })
 
     // tabs
 });
