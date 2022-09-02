@@ -21,8 +21,10 @@ window.addEventListener("DOMContentLoaded", () => {
     hamburger();
     hamburgerLinks.forEach((link)=> {
         link.addEventListener("click",(event)=> {
-            hamburgerBtn.classList.toggle("btn-active");
-            hamburderContent.classList.toggle("hamburger-active");
+            if(event.target) {
+                hamburgerBtn.classList.toggle("btn-active");
+                hamburderContent.classList.toggle("hamburger-active");
+            }
         });
     })
 

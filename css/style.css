@@ -58,16 +58,24 @@
               transform: translateX(0%); }
     .main .header .hamburger-link {
       width: 100%;
-      padding: 1.5rem 0; }
+      height: 90px; }
       .main .header .hamburger-link a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        height: 100%;
         font-family: "Inter";
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
         color: #D27487;
-        text-decoration: none;
-        display: block;
-        text-align: center; }
+        text-decoration: none; }
       .main .header .hamburger-link:hover {
         background-color: #53373e; }
     .main .header .header-content {
@@ -125,7 +133,8 @@
     .main .bg-container .main-bg {
       -o-object-fit: cover;
          object-fit: cover;
-      width: 100%; }
+      width: 100%;
+      height: auto; }
 
 .about-us {
   display: -webkit-box;
