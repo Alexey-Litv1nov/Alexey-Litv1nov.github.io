@@ -373,6 +373,9 @@
       color: #1F1F1F;
       margin: 0 16px; }
 
+.google-map {
+  height: 630px; }
+
 @media (max-width: 1200px) {
   .menu {
     padding: 80px 0 20px 0;
@@ -436,8 +439,11 @@
           -ms-flex-align: center;
               align-items: center; }
       .awards .awards-content-heading {
+        font-size: 30px;
+        line-height: 32px;
         text-align: center;
-        width: 100%; }
+        width: 100%;
+        min-height: 50px; }
       .awards .awards-content-descr {
         margin-top: 20px;
         width: 100%; }
@@ -506,7 +512,7 @@
       width: auto; }
 
   .awards {
-    padding: 0; }
+    padding: 10px; }
     .awards-content {
       padding: 0 5px; }
       .awards-content-descr {
@@ -533,10 +539,10 @@
         margin: 40px 0; } }
 @media (max-width: 600px) {
   .photo-gallery {
-    min-height: 1200px; } }
+    min-height: 900px; } }
 @media (max-width: 500px) {
   .photo-gallery {
-    min-height: 1000px; }
+    min-height: 870px; }
 
   .header-content .header__hamburger-btn {
     position: absolute;
