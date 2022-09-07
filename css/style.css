@@ -376,6 +376,22 @@
 .google-map {
   height: 630px; }
 
+.page-up {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all; }
+  .page-up:hover {
+    opacity: 0.9; }
+  .page-up img {
+    width: 100%; }
+
 @media (max-width: 1200px) {
   .menu {
     padding: 80px 0 20px 0;

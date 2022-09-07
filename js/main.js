@@ -28,5 +28,17 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     })
 
-    // tabs
+    // btn-up
+    let up = document.querySelector(".page-up");
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            up.style.display = "block";
+        } else {
+            up.style.display = "none";
+        }
+    }
 });
