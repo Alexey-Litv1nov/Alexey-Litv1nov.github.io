@@ -41,4 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
             up.style.display = "none";
         }
     }
+    
+    // wow js
+    new WOW().init();
 });
