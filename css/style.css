@@ -241,7 +241,11 @@
     padding-right: 36px; }
     .menu .img-container .menu-img {
       width: 664px;
-      height: 1037px; }
+      height: 1037px;
+      -webkit-animation: showImgContent 1s;
+              animation: showImgContent 1s;
+      -webkit-transition: 0.9s all;
+      transition: 0.9s all; }
 
 .info {
   min-height: 473px;
@@ -392,6 +396,20 @@
   .page-up img {
     width: 100%; }
 
+.hide {
+  display: none; }
+
+@-webkit-keyframes showImgContent {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes showImgContent {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 @media (max-width: 1200px) {
   .menu {
     padding: 80px 0 20px 0;

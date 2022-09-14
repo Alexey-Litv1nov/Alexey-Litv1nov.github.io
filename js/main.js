@@ -30,9 +30,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // btn-up
     let up = document.querySelector(".page-up");
-    window.onscroll = function() {
+
+    window.addEventListener("scroll",()=> {
         scrollFunction();
-    };
+    })
 
     function scrollFunction() {
         if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
@@ -41,7 +42,91 @@ window.addEventListener("DOMContentLoaded", () => {
             up.style.display = "none";
         }
     }
-    
+
     // wow js
+    // активирует анимацию всплытия элементов, когда пользователь долистывает до
+    // конкретного блока
     new WOW().init();
+
+    // tabs
+    const tabsParent = document.querySelector(".tab-items");
+    const imgContent = document.querySelectorAll(".menu-img");
+    const tabs = document.querySelectorAll(".tab-item");
+    console.log(imgContent[0]);
+
+    // функция скрытия контента
+    function hideTabContent() {
+        imgContent.forEach((elem)=> {
+            elem.style.display = "none";
+        });
+        tabs.forEach((e)=> {
+            e.classList.remove("active");
+        })
+    }
+
+    // показываем нужную картинку по индексу
+    function showTabContent(i = 0) {
+        hideTabContent();
+        imgContent[i].style.display = "block";
+        tabs[i].classList.add("active");
+    }
+
+    tabsParent.addEventListener("click",(event)=> {
+        const target = event.target;
+        if(target && target.classList.contains('tab-item')) {
+            tabs.forEach((item, i) => {
+                if (target == item) {
+                    console.log(item + " " + i);
+                    showTabContent(i);
+                }
+            });
+        }
+    })
+
+    showTabContent(0);
+
+
+    // db
+    fetch('http://localhost:3000/combo').then((data)=> {
+            return data.json();
+        }).then((res)=> {
+            console.log(res);
+        });
 });
+
+// let tabs = document.querySelectorAll('.tabheader__item'),
+// tabsContent = document.querySelectorAll('.tabcontent'),
+// tabsParent = document.querySelector('.tabheader__items');
+
+// function hideTabContent() {
+
+// tabsContent.forEach(item => {
+//     item.classList.add('hide');
+//     item.classList.remove('show', 'fade');
+// });
+
+// tabs.forEach(item => {
+//     item.classList.remove('tabheader__item_active');
+// });
+// }
+
+// function showTabContent(i = 0) {
+// tabsContent[i].classList.add('show', 'fade');
+// tabsContent[i].classList.remove('hide');
+// tabs[i].classList.add('tabheader__item_active');
+// }
+
+// hideTabContent();
+// showTabContent();
+
+// tabsParent.addEventListener('click', function(event) {
+// const target = event.target;
+// if(target && target.classList.contains('tabheader__item')) {
+//     tabs.forEach((item, i) => {
+//         if (target == item) {
+//             hideTabContent();
+//             showTabContent(i);
+//         }
+//     });
+// }
+// });
