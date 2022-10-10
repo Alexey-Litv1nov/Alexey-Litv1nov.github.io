@@ -1,15 +1,16 @@
 window.addEventListener("DOMContentLoaded", () => {
-// hamburger menun
+// hamburger menu
     let hamburgerBtn = document.querySelector(".header__hamburger-btn");
     let hamburgerLinks = document.querySelectorAll(".hamburger-link");
     let hamburderContent = document.querySelector(".hamburger-content");
+    // open hamburger menu
     function hamburger() {
         hamburgerBtn.addEventListener("click",()=> {
             hamburgerBtn.classList.toggle("btn-active");
             hamburderContent.classList.toggle("hamburger-active");
         });
     }
-    // close hamburger menu without btn
+    // close hamburger menu without close btn
     document.addEventListener("click",(e)=> {
         const click = e.composedPath().includes(hamburderContent);
         const btnClick = e.composedPath().includes(hamburgerBtn);
@@ -19,6 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
     hamburger();
+    // close hamburger menu at click on hamburger link
     hamburgerLinks.forEach((link)=> {
         link.addEventListener("click",(event)=> {
             if(event.target) {
@@ -29,12 +31,12 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     // btn-up
-    let up = document.querySelector(".page-up");
+    const up = document.querySelector(".page-up");
 
     window.addEventListener("scroll",()=> {
         scrollFunction();
     })
-
+    // показ кнопки "вверх" при скроле от верхней границы страницы на 600px
     function scrollFunction() {
         if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
             up.style.display = "block";
@@ -52,7 +54,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const tabsParent = document.querySelector(".tab-items");
     const imgContent = document.querySelectorAll(".menu-img");
     const tabs = document.querySelectorAll(".tab-item");
-    console.log(imgContent[0]);
 
     // функция скрытия контента
     function hideTabContent() {
@@ -70,13 +71,12 @@ window.addEventListener("DOMContentLoaded", () => {
         imgContent[i].style.display = "block";
         tabs[i].classList.add("active");
     }
-
+    // делегирование событий
     tabsParent.addEventListener("click",(event)=> {
         const target = event.target;
         if(target && target.classList.contains('tab-item')) {
             tabs.forEach((item, i) => {
                 if (target == item) {
-                    console.log(item + " " + i);
                     showTabContent(i);
                 }
             });
@@ -87,46 +87,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     // db
+    // отображение данных из db.json
     fetch('http://localhost:3000/combo').then((data)=> {
             return data.json();
         }).then((res)=> {
             console.log(res);
         });
 });
-
-// let tabs = document.querySelectorAll('.tabheader__item'),
-// tabsContent = document.querySelectorAll('.tabcontent'),
-// tabsParent = document.querySelector('.tabheader__items');
-
-// function hideTabContent() {
-
-// tabsContent.forEach(item => {
-//     item.classList.add('hide');
-//     item.classList.remove('show', 'fade');
-// });
-
-// tabs.forEach(item => {
-//     item.classList.remove('tabheader__item_active');
-// });
-// }
-
-// function showTabContent(i = 0) {
-// tabsContent[i].classList.add('show', 'fade');
-// tabsContent[i].classList.remove('hide');
-// tabs[i].classList.add('tabheader__item_active');
-// }
-
-// hideTabContent();
-// showTabContent();
-
-// tabsParent.addEventListener('click', function(event) {
-// const target = event.target;
-// if(target && target.classList.contains('tabheader__item')) {
-//     tabs.forEach((item, i) => {
-//         if (target == item) {
-//             hideTabContent();
-//             showTabContent(i);
-//         }
-//     });
-// }
-// });

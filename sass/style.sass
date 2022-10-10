@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@700&family=Inter&display=swap')
+$main-bg: #4A2B33
+$about-bg: #FFFFFF
+$color-nav-link: #D27487
+$menu-bg: #E9E9E3
+$menu-text: #6F6F64
+$white: #fff
+$info-bg: #AA9E54
+$hover-burger-link: #53373e
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    scroll-behavior: smooth
+
+.main
+    min-height: 800px
+    background-color: $main-bg
+    .header
+        height: 120px
+        padding: 22.5px 56px 22.5px 56px
+        &__hamburger-btn
+            display: none
+            font-size: 40px
+            color: $color-nav-link
+            background-color: $main-bg
+            border: none
+            transition: transform .5s ease-in-out
+            cursor: pointer
+        .btn-active
+            display: block
+            transform: translateX(250px)
+        .hamburger-content
+            display: flex
+            flex-direction: column
+            align-items: center
+            background-color: $main-bg
+            position: fixed
+            height: 100vh
+            top: 0
+            left: 0
+            width: 250px
+            transform: translateX(-100%)
+            transition: transform .5s ease-in-out
+            z-index: 3
+            // z-index: 3
+            .hamburger-menu
+                width: 100%
+        .hamburger-active
+            transform: translateX(0%)
+        .hamburger-link
+            width: 100%
+            height: 90px
+            a
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 100%
+                font-family: 'Inter'
+                font-style: normal
+                font-weight: 400
+                font-size: 30px
+                color: $color-nav-link
+                text-decoration: none
+            &:hover
+                background-color: $hover-burger-link
+        .header-content
+            position: relative
+            display: flex
+            align-items: center
+            height: 75px
+            .nav
+                height: 25px
+                .nav-link
+                    text-decoration: none
+                    color: $color-nav-link
+                    font-family: 'Inter'
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 20px
+                    line-height: 24px
+                    margin-right: 20px
+                .nav-link:lastChild
+                    margin-right: 0
+            .logo
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                display: block
+                margin: 0 auto
+                width: 276px
+                height: 32px
+                cursor: pointer
+            .social-networks
+                margin-left: auto
+                display: flex
+                &_link
+                    margin-left: 16px
+                    width: 24px
+                    height: 24px
+                &_link:first-child
+                    margin-left: none
+    .bg-container
+        display: flex
+        justify-content: center
+        padding: 0 56px
+        .main-bg
+            object-fit: cover
+            width: 100%
+            height: auto
+            // max-height: 644px
+
+.about-us
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 713px
+    background-color: $about-bg
+    .about-us_content
+        display: flex
+        flex-direction: column
+        align-items: center
+        min-height: 273px
+        width: 900px
+        &_heading
+            color: #222222
+            font-family: 'Azeret Mono'
+            font-style: normal
+            font-weight: 700
+            font-size: 17px
+            line-height: 22px
+        &_descr
+            font-family: 'Inter'
+            font-style: normal
+            font-weight: 400
+            font-size: 32px
+            line-height: 45px
+            text-align: center
+.menu
+    display: flex
+    // flex-direction: column
+    // align-items: center
+    min-height: 1277px
+    padding: 120px 20px 0 20px
+    background-color: $menu-bg
+    .select-menu
+        width: 50%
+        padding-left: 36px
+        .menu-text
+            width: 560px
+            min-height: 185px
+            .menu-heading
+                font-family: 'Azeret Mono'
+                font-style: normal
+                font-weight: 700
+                font-size: 18px
+                line-height: 22px
+                color: $menu-text
+            .menu-descr
+                font-family: 'Inter'
+                font-style: normal
+                font-weight: 400
+                font-size: 32px
+                line-height: 45px
+                color: $menu-text
+        .tab-items
+            display: flex
+            flex-direction: column
+            margin-top: 63px
+            width: 531.19px
+            .tab-item
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 531px
+                height: 58px
+                border: 2px solid $menu-text
+                margin-bottom: 12px
+                color: $menu-text
+                font-family: 'Inter'
+                font-style: normal
+                font-weight: 400
+                font-size: 15px
+                line-height: 24px
+            .active
+                background-color: $menu-text
+                color: $white
+    .img-container
+        width: 50%
+        padding-right: 36px
+        .menu-img
+            width: 664px
+            height: 1037px
+            animation: showImgContent 1s
+            transition: .9s all
+
+.info
+    min-height: 473px
+    padding: 120px 56px
+    background-color: $info-bg
+    &-container
+        min-height: 233px
+        display: flex
+        justify-content: space-between
+    &-item
+        width: 390px
+        display: flex
+        flex-direction: column
+        align-items: center
+        &-heading
+            font-family: 'Azeret Mono'
+            font-style: normal
+            font-weight: 700
+            font-size: 18px
+            line-height: 22px
+            color: $white
+        &-descr
+            text-align: center
+            font-family: 'Inter'
+            font-style: normal
+            font-weight: 400
+            font-size: 25px
+            line-height: 36px
+            color: $white
+            margin-top: 15px
+        &-secondDescr
+            margin-top: 35px
+
+.photo-gallery
+    min-height: 912px
+    padding: 120px 20px
+    background-color: $white
+    .photo-container
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        padding: 32px 36px 0 36px
+        height: 672px
+        .first
+            margin-bottom: 40px
+            margin-right: 40px
+        .gallery-img
+            width: 644px
+
+.awards
+    min-height: 461px
+    background-color: $main-bg
+    padding: 120px 20px
+    &-content
+        padding: 0 69px 0 36px
+        display: flex
+        justify-content: space-between
+        &-heading
+            font-family: 'Azeret Mono'
+            font-style: normal
+            font-weight: 400
+            font-size: 47px
+            line-height: 62px
+            color: $color-nav-link
+            letter-spacing: 1px
+            width: 413px
+            min-height: 125px
+        &-descr
+            font-family: 'Inter'
+            font-style: normal
+            font-weight: 400
+            font-size: 18px
+            line-height: 27px
+            width: 595px
+            color: $color-nav-link
+
+.footer
+    min-height: 186px
+    padding: 52.25px 70px 15.75px 70px
+    &-content
+        display: flex
+        flex-direction: column
+        align-items: center
+        .footer-link-wrapper
+            width: 650px
+            display: flex
+            justify-content: center
+            flex-wrap: wrap
+        .footer-link
+            text-decoration: none
+            font-family: 'Inter'
+            font-style: normal
+            font-weight: 400
+            font-size: 15px
+            line-height: 22px
+            color: #1F1F1F
+            margin: 0 16px
+
+.google-map
+    height: 630px
+
+.page-up
+    display: none
+    overflow: hidden
+    position: fixed
+    bottom: 40px
+    right: 40px
+    width: 40px
+    height: 40px
+    opacity: .7
+    transition: .3s all
+    &:hover
+        opacity: .9
+    img
+        width: 100%
+
+.hide
+    display: none
+
+// анимация плавного показа menu-img
+@keyframes showImgContent
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+// adaptive
+@media ( max-width: 1200px)
+    .menu
+        padding: 80px 0 20px 0
+        flex-direction: column
+        align-items: center
+        .select-menu
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 0
+            width: 100%
+            .menu-text
+                width: 531.19px
+                .menu-heading, .menu-descr
+                    text-align: center
+            .tab-items
+                margin-top: 0
+        .img-container
+            width: 100%
+            display: flex
+            justify-content: center
+            padding: 0
+            margin-top: 20px
+    .main
+        .header
+            .header-content
+                .nav
+                    display: none
+                .social-networks
+                    display: none
+            &__hamburger-btn
+                display: block
+        .bg-container
+            padding: 10px
+
+    .awards
+        padding: 20px 20px
+        .awards-content
+            display: flex
+            flex-direction: column
+            align-items: center
+            &-heading
+                font-size: 30px
+                line-height: 32px
+                text-align: center
+                width: 100%
+                min-height: 50px
+            &-descr
+                margin-top: 20px
+                width: 100%
+
+    .photo-gallery
+        display: flex
+        justify-content: center
+        min-height: 1430px
+        padding: 20px 20px
+        background-color: $white
+        .photo-container
+            display: flex
+            flex-direction: column
+            flex-wrap: nowrap
+            padding: 32px 36px 0 36px
+            .gallery-img
+                margin-top: 20px
+                width: 644px
+            .first
+                margin-bottom: 0
+                margin-right: 0
+    .about-us
+        &_content
+            padding: 0 20px
+
+@media ( max-width: 720px)
+    .main
+        min-height: 500px
+
+    .menu
+        .select-menu
+            .tab-items
+                width: 95%
+                margin: 0 auto
+                margin-top: 20px
+                .tab-item
+                    width: 100%
+            .menu-text
+                width: 100%
+        .img-container
+            .menu-img
+                width: 95%
+                height: auto
+
+    .photo-gallery
+        padding: 0
+        min-height: 1400px
+        .photo-container
+            padding: 20px 0
+            .gallery-img
+                display: block
+                margin: 0 auto
+                width: 95%
+                margin-top: 20px
+
+    .footer
+        padding: 30px 5px
+        height: 130px
+        .footer-link-wrapper
+            width: auto
+
+    .awards
+        padding: 10px
+        &-content
+            padding: 0 5px
+            &-descr
+                margin: 15px 5px 5px 5px
+                text-align: center
+
+    
+    .info
+        padding: 0
+        .info-container
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            .info-item
+                margin: 40px 0
+
+@media ( max-width: 600px)
+    .photo-gallery
+        min-height: 900px
+
+@media ( max-width: 500px)
+    .photo-gallery
+        min-height: 870px
+    .header
+        &-content
+            .header__hamburger-btn
+                position: absolute
+                left: -50px
